@@ -11,5 +11,5 @@ The data comes from the Kaggle dataset "Fase Mask Detection". which can be found
 - data
   - raw
     - kaggle data
-      - annotations
-      - images
+      - annotations: 583 XML documents tagging the images
+      - images: 583 png images
