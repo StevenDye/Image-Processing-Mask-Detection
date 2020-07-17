@@ -9,7 +9,7 @@ The data comes from the Kaggle dataset "Fase Mask Detection". which can be found
 
 ## Summary of files
 - data
- - raw
-   - kaggle data
-     - annotations
-     - images
+  - raw
+    - kaggle data
+      - annotations
+      - images
