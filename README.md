@@ -10,11 +10,15 @@ Calculate the distance between people to see if they are social distancing.
 Deploy an app or website that will allow users to uplaod photos to test the model and (with their permission) add the photos to our dataset.
 
 ## Data
-The data comes from the Kaggle dataset "Fase Mask Detection". which can be found here: https://www.kaggle.com/andrewmvd/face-mask-detection
+The data comes from the Kaggle dataset "Fase Mask Detection", which can be found here: https://www.kaggle.com/andrewmvd/face-mask-detection
 
 ## Summary of files
+- README.md
 - data
   - raw
     - kaggle
       - annotations: 583 XML documents tagging the images
       - images: 583 png images
+- notebooks
+  - SD_Working_Notebook.ipynb
+- src
