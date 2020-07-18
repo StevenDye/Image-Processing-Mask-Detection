@@ -5,7 +5,8 @@ The project focuses on identifying whether or not someone is wearing a mask corr
 To dertmine if people are wearing masks and if they are wearing them correctly.
 
 ## Down the Road Goals
-Calculate the distance between people to see if they are social distancing
+Calculate the distance between people to see if they are social distancing.
+
 Deploy an app or website that will allow users to uplaod photos to test the model and (with their permission) add the photos to our dataset.
 
 ## Data
