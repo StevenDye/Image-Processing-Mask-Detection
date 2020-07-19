@@ -1,0 +1,2 @@
+Do pictures need to be re-sized so that they are all the same size?
+Make images black and white?

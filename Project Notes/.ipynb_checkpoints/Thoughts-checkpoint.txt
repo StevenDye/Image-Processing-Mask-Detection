@@ -1,0 +1,9 @@
+The model should be able to:
+- Identify everyone in a photo who is wearing a mask
+- Identify everyone who isn't wearing a mask
+- Identify everyone who is and wearing a mask incorrectly
+
+A second model should be able to:
+- Calculate the distance between everyone in the photo
+
+Convolutional window
