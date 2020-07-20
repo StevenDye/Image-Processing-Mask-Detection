@@ -1,0 +1,10 @@
+Work in progress
+
+Data Cleaning/Preprocessing functions:
+- One that extracts needed information from XML tags
+- One that can identify faces from photos
+  - This can be done using the x and y coordinates in the XML tag
+- One that can make separate photos/entries for each face
+- One that scales all the photos to the same size
+- One that combines photo info with labels
+- ???
