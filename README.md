@@ -21,4 +21,5 @@ The data comes from the Kaggle dataset "Fase Mask Detection", which can be found
       - images: 583 png images
 - notebooks
   - SD_Working_Notebook.ipynb
+- requirements.txt
 - src
