@@ -2,7 +2,7 @@
 
 import numpy as np
 from skimage import color, measure
-from skimage.feature import canny, corner_harris
+from skimage.feature import canny, Cascade, corner_harris
 from skimage.filters import threshold_otsu
 from skimage.transform import resize, rotate
 
