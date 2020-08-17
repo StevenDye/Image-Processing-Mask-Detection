@@ -7,3 +7,8 @@ A second model should be able to:
 - Calculate the distance between everyone in the photo
 
 Convolutional window
+
+Special thanks to:
+- Prajnasb for collecting data. Can be found here: https://github.com/prajnasb/observations/blob/master/mask_classifier/training.ipynb
+- Spandtex
+- deeplizard
