@@ -1,10 +1,32 @@
 """This module is for making the dataset"""
 
+import cv2
 import numpy as np
+import os
 from skimage import color, measure
 from skimage.feature import canny, Cascade, corner_harris
 from skimage.filters import threshold_otsu
 from skimage.transform import resize, rotate
+
+def create_data(img_size, categories, root_path):
+  """
+  This function pulls the images from the data folder, gives them a label
+  depending on what folder they are pulled from, grayscales the image, and
+  resizes the image the specified size.
+  """
+  data = []
+  for category in categories:
+    img_path = os.path.join(root_path, category)
+    class_num = categories.index(category)  # get the classification  (0 or a 1)
+    for img in os.listdir(img_path):
+      try:
+        img_array = cv2.imread(os.path.join(img_path, img), cv2.IMREAD_GRAYSCALE)
+        new_array = cv2.resize(img_array, (img_size, img_size))  # resize to normalize data size
+        data.append([new_array, class_num])  # add this to our training_data
+      except Exception as e:
+        pass
+
+  return data
 
 def find_contours(image):
     """This function finds the contours of an image"""
