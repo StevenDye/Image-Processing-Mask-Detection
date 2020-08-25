@@ -1,5 +1,7 @@
 """This module hosts all of the functions that are used for visualization"""
 
+import itertools
+import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import patches
 
@@ -33,7 +35,9 @@ def show_detected_face(result, detected, title='Face Image'):
 
 # Make visualizations
 def visualize_training_results(results):
-  """function for visualizing the loss and accuracy metrics."""
+  """
+  function for visualizing the loss and accuracy metrics.
+  """
   history = results.history
   plt.figure()
   plt.plot(history['val_loss'])
