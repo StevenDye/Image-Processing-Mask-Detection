@@ -8,7 +8,7 @@ from skimage.feature import canny, Cascade, corner_harris
 from skimage.filters import threshold_otsu
 from skimage.transform import resize, rotate
 
-def create_data(img_size, categories, root_path):
+def prepare_data(img_size, categories, root_path):
   """
   This function pulls the images from the data folder, gives them a label
   depending on what folder they are pulled from, grayscales the image, and
@@ -22,11 +22,42 @@ def create_data(img_size, categories, root_path):
       try:
         img_array = cv2.imread(os.path.join(img_path, img), cv2.IMREAD_GRAYSCALE)
         new_array = cv2.resize(img_array, (img_size, img_size))  # resize to normalize data size
-        data.append([new_array, class_num])  # add this to our training_data
+        data.append([new_array, class_num])  # add this to our data
       except Exception as e:
         pass
 
   return data
+
+
+def flip_image(image, label):
+    """
+    This function takes in an image and returns an image flipped on its y-axis,
+    and returns it in a list with a label.
+    """
+    flipped_image = [np.fliplr(image), label]
+    
+    return flipped_image
+
+
+
+def rotate_image(image, label, angle):
+    """
+    This function takes in an image, and returns an image that is an angle anticlockwise
+    """
+    rotated_image = [rotate(image, angle), label]
+    
+    return rotated_image
+
+
+
+
+
+
+
+
+
+
+
 
 def find_contours(image):
     """This function finds the contours of an image"""
@@ -41,6 +72,7 @@ def find_contours(image):
     countours = measure.find_contours(threshold_image, 0.8)
     
     return countours
+
 
 def find_corners(image):
     """This function finds the corners in an image"""
@@ -64,14 +96,6 @@ def find_edges(image):
     return canny_edges
     
 
-def flip_image(image):
-    """This function takes in an image and returns an image flipped on its y-axis, and returns it as an numpy array"""
-    
-    flipped_image = np.fliplr(image)
-    
-    return flipped_image
-
-
 def resize_image(image, width, height):
     """This function takes in an image and resizes it to the specified size"""
     
@@ -79,12 +103,3 @@ def resize_image(image, width, height):
     resized_image = resize(image, (height, width), anti_aliasing=True)  # anti_aliasing smooths out pixilation
     
     return resized_image
-
-
-def rotate_image(image):
-    """This function takes in an image, and returns an image that is rotated 90 degrees anticlockwise"""
-    
-    image = np.asarray(image)
-    rotated_image = rotate(image, 90)
-    
-    return rotated_image
