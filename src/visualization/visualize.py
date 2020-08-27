@@ -73,7 +73,7 @@ def plot_confusion_matrix(cm, classes, normalize=False,
   plt.yticks(tick_marks, classes)
 
   if normalize:
-    cm = cs.astype('flaot') / cm.sum(axis=1)[:, np.newaxis]
+    cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
     print("Normalized confusion matrix")
   else:
     print("confusion matrix, without normalization")
