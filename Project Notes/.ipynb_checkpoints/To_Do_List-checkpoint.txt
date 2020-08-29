@@ -1,6 +1,0 @@
-- Data Storage:
-  - Centralize data storage (AWS?)
-  
-- Data Processing:
-  - Flip images on y-axis to double the number of data images
-
