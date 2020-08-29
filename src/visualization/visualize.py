@@ -1,16 +1,16 @@
 """This module hosts all of the functions that are used for visualization"""
 
-import itertools
-import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+from sklearn.metrics import confusion_matrix
 from matplotlib import patches
+from mlxtend.plotting import plot_confusion_matrix
 
-def show_image(image, title='Image', cmap_type='gray'):
+def show_image(path):
     """This function plots the image of interest"""
     
-    plt.imshow(image, cmap=cmap_type)
-    plt.title(title)
-    plt.axis('off')
+    img = mpimg.imread(path)
+    imgplot = plt.imshow(img)
     plt.show()
     
     
@@ -58,32 +58,12 @@ def visualize_training_results(results):
   plt.show()
 
     
-def plot_confusion_matrix(cm, classes, normalize=False,
-                          title='Confusion Matrix',
-                          cmap=plt.cm.Blues):
-  """
-  This function prints and plots the confusion matrix.
-  Normalization can be applied by setting 'normalize=True.
-  """
-  plt.imshow(cm, interpolation='nearest', cmap=cmap)
-  plt.title(title)
-  plt.colorbar()
-  tick_marks = np.arange(len(classes))
-  plt.xticks(tick_marks, classes, rotation=45)
-  plt.yticks(tick_marks, classes)
-
-  if normalize:
-    cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-    print("Normalized confusion matrix")
-  else:
-    print("confusion matrix, without normalization")
-
-  thresh = cm.max() / 2.
-  for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-    plt.text(j, i, cm[i,j],
-             horizontalalignment="center",
-             color="white" if cm[i,j] > thresh else "black")
+def plot_cm(labels, predictions, classes):
+    cm = confusion_matrix(y_true=labels, y_pred=predictions)
+    fig, ax = plot_confusion_matrix(conf_mat=cm,
+                                    show_absolute=True,
+                                    show_normed=True,
+                                    colorbar=True,
+                                    class_names=classes)
+    plt.show()
     
-    plt.tight_layout()
-    plt.ylabel("True label")
-    plt.xlabel("Predicted label")

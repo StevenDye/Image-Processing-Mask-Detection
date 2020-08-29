@@ -3,10 +3,7 @@
 import cv2
 import numpy as np
 import os
-from skimage import color, measure
-from skimage.feature import canny, Cascade, corner_harris
-from skimage.filters import threshold_otsu
-from skimage.transform import resize, rotate
+from skimage.transform import rotate
 
 def prepare_data(img_size, categories, root_path):
   """
@@ -47,3 +44,13 @@ def rotate_image(image, label, angle):
     rotated_image = [rotate(image, angle), label]
     
     return rotated_image
+
+
+def shift_image(image, label, shift):
+    """
+    This function takes in an image, and returns an image shifted to the left or to the right
+    """
+    shifted_image = [np.roll(image, shift), label]
+    
+    return shifted_image
+
