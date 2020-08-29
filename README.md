@@ -19,8 +19,9 @@ The data comes from two sources, the Kaggle dataset "Face Mask ~12K Images Datas
       - with_mask: 1735 images
       - without_mask: 1735 images
 - models
+  - 50x50-5-epochs-111040-images.h5
 - notebooks
-  - SD_Working_Notebook.ipynb
+  - Technical_Notebook.ipynb
 - requirements.txt
 - src
   - data
