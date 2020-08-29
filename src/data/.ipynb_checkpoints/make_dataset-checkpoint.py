@@ -12,31 +12,29 @@ IMG_SIZE = 50
 CATEGORIES = ['with_mask', 'without_mask']
 
 
-
 """Prepare Training Data"""
-
 # Import and prepare data
 train_data = bf.prepare_data(IMG_SIZE, CATEGORIES, TRAIN_PATH)
 
 # Create flipped augmented data
-#for idx in range(len(train_data)):
-#    train_data.append(bf.flip_image(train_data[idx][0], train_data[idx][1]))
+for idx in range(len(train_data)):
+    train_data.append(bf.flip_image(train_data[idx][0], train_data[idx][1]))
 
 # Create right-shifted augmented data
-#for idx in range(len(train_data)):
-#    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], 1))
+for idx in range(len(train_data)):
+    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], 1))
 
 # Create left-shifted augmented data
-#for idx in range(len(train_data)):
-#    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], -2))
+for idx in range(len(train_data)):
+    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], -2))
     
 # Create up-shifted augmented data
-#for idx in range(len(train_data)):
-#    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], IMG_SIZE))
+for idx in range(len(train_data)):
+    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], IMG_SIZE))
     
 # Create down-shifted augmented data
-#for idx in range(len(train_data)):
-#    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], -2*IMG_SIZE))
+for idx in range(len(train_data)):
+    train_data.append(bf.shift_image(train_data[idx][0], train_data[idx][1], -2*IMG_SIZE))
 
 # Shuffle data 
 np.random.shuffle(train_data)
@@ -56,12 +54,9 @@ train_labels = np.asarray(train_labels).reshape((-1,1))
 train_images = train_images/255.0
 
 
-
 """Prepare Testing Data"""
-
 # Import and prepare data
 test_data = bf.prepare_data(IMG_SIZE, CATEGORIES, TEST_PATH)
-
 
 test_images = []
 test_labels = []
