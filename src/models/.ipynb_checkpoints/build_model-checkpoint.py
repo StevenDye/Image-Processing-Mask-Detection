@@ -1,7 +1,6 @@
 """This module is to build the model"""
 import warnings
-warnings.filterwarnings('ignore')
-
+from tensorflow.keras import regularizers
 from tensorflow.keras.layers import (Dense,
                                      Dropout,
                                      Flatten,
@@ -9,7 +8,7 @@ from tensorflow.keras.layers import (Dense,
                                      MaxPooling2D,
                                      Activation)
 from tensorflow.keras.models import Sequential
-from tensorflow.keras import regularizers
+warnings.filterwarnings('ignore')
 
 INPUT_SHAPE = (50, 50, 1)
 
