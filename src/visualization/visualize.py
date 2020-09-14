@@ -12,26 +12,6 @@ def show_image(path):
     img = mpimg.imread(path)
     plt.imshow(img)
 
-
-def show_detected_face(result, detected, title='Face Image'):
-    """This function creates a square around detected faces"""
-    plt.imshow(result)
-    img_desc = plt.gca()
-    plt.set_cmap('gray')
-    plt.title(title)
-    plt.axis('off')
-
-    for patch in detected:
-        img_desc.add_patch(
-            patches.Rectangle(
-                (patch['c'], patch['r']),
-                patch['width'],
-                patch['height'],
-                fill=False, color='r', linewidth=2)
-        )
-    plt.show()
-
-
 # Make visualizations
 def visualize_training_results(results):
     """
