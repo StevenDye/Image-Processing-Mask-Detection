@@ -6,7 +6,7 @@ Date: July 2020 - August 2020
 Collaborators: Steven Dye
 
 ## Data
-The data comes from two sources, the Kaggle dataset "Face Mask ~12K Images Dataset", which can be found here: https://www.kaggle.com/ashishjangra27/face-mask-12k-images-dataset, and from Ashish Jangra, who has images collected on their Github here: https://github.com/balajisrinivas/Face-Mask-Detection/tree/master/dataset. Augmented images from were removed from the data as we will be making our own augmented images, and other images were removed to keep with_mask and without_mask categories balanced.
+The data comes from two sources, the Kaggle dataset "Face Mask ~12K Images Dataset", which can be found here: https://www.kaggle.com/ashishjangra27/face-mask-12k-images-dataset, and from Ashish Jangra, who has images collected on their Github here: https://github.com/balajisrinivas/Face-Mask-Detection/tree/master/dataset. Augmented images from were removed from the data as we will be making our own augmented images, and other images were removed to keep with_mask and without_mask categories balanced. A blog posting detailing the process of project can be found here: https://towardsdatascience.com/so-i-see-that-youre-not-wearing-a-mask-6631746c7559
 
 ## Summary of files
 - README.md
